@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>scrollToTop</title>
+    <style media="screen">
+        .main{
+            position: absolute;
+            width: 500px;
+            height: 800px;
+            border: 1px solid black;
+            overflow-y: auto;
+        }
+        .main .normal {
+            height: 300px;
+        }
+        .show{
+            display: none;
+        }
+        #toTop{
+            position: absolute;
+            background: red;
+            right: 20px;
+            bottom: 20px;
+            margin: 20px;
+            cursor: pointer;
+            width: 0;
+            height: 0;
+            border-top: 30px solid transparent;
+            border-bottom: 60px solid #3498db;
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="normal">
+            test1
+        </div>
+        <div class="normal">
+            test1
+        </div>
+        <div class="normal">
+            test1
+        </div>
+        <div class="normal">
+            test1
+        </div>
+        <div class="normal">
+            test1
+        </div>
+        <div class="normal">
+            test1
+        </div>
+        <div class="normal">
+            test1
+        </div>
+        <div class="normal">
+            test1
+        </div>
+        <div class="normal">
+            test1
+        </div>
+        <div class="normal">
+            test1
+        </div>
+        <span id="toTop" class="toTop show" ></span>
+    </div>
+<script src="./index.js"></script>
+</body>
+</html>
