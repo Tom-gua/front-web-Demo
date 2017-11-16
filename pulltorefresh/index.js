@@ -6,20 +6,22 @@ var s = function(className) {
 var log = function() {
     console.log.apply(console, arguments)
 }
-
+var changeTopTextRefresh = function() {
+    s('.down-refresh').innerText = '...'
+    s('.text').innerText = '刷新'
+}
 var bindScrollMouse = function(container) {
     s('.container').addEventListener('touchstart', function(e){
         // 需要根据移动的距离来进行不同的操作
         // 记录开始的位置
         window.startY = e.targetTouches[0].clientY
         log('开始',e.targetTouches, e.targetTouches[0].clientY)
-
     })
     s('.container').addEventListener('touchmove', function(e){
         // 需要根据移动的距离来进行不同的操作, 这个offset要做成全局的,下面的 end 也要实时监测
         offset =  e.targetTouches[0].clientY - window.startY
         s('.container').style.top = offset  + 'px'
-
+        // 这里需要判断移动的距离超出之后，改变文字的状态问题
     })
     s('.container').addEventListener('touchend', function(e){
         // 需要根据移动的距离来进行不同的操作
@@ -31,6 +33,7 @@ var bindScrollMouse = function(container) {
         }else {
             // 需要进入刷新状态
             // 1. 改变顶部的状态
+            changeTopTextRefresh()
             // 2. 设置 container 的高度
             // 3. 执行异步请求，等待数据
             // 4. 请求拿到之后，写入到页面
