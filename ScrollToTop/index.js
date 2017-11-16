@@ -16,7 +16,7 @@ var bindClickToTop = function(className, container) {
     })
 }
 
-var bindScrollMouse = function(container, callback) {
+var bindScrollMouse = function(container) {
     var top = document.querySelector('#toTop')
     var c = document.querySelector(container)
     // scrollTop 是滑动条距离顶部的位置
@@ -31,8 +31,8 @@ var bindScrollMouse = function(container, callback) {
     })
 }
 
- var main = function() {
-     bindScrollMouse('.main')
-     bindClickToTop('#toTop', '.main')
+ var main = function(topClass, container) {
+     bindScrollMouse(container)
+     bindClickToTop(topClass, container)
  }
- main()
+ main('#toTop', '.main')
